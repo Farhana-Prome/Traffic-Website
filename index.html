@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Traffic System Web App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">TrafficApp</div>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#live-map">Live Map</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="profile-menu">
+        <img src="icons/user-icon.svg" alt="Profile" id="profileIcon" />
+        <div class="dropdown" id="profileDropdown">
+          <a href="#">Login</a>
+          <a href="#">Sign Up</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero" id="live-map">
+    <h1>Real-time Traffic Updates for Your City</h1>
+    <p>Stay ahead with live traffic jams, accidents, and alerts.</p>
+    <button class="cta-btn">View Live Map</button>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features" id="features">
+    <h2>Features</h2>
+    <div class="feature-cards">
+      <a href="#traffic-signs" class="feature-card">
+        <img src="icons/stop-sign.svg" alt="Traffic Signs Icon" />
+        <h3>Traffic Signs</h3>
+        <p>Learn and identify common road signs.</p>
+      </a>
+      <a href="#traffic-rules" class="feature-card">
+        <img src="icons/rules.svg" alt="Traffic Rules Icon" />
+        <h3>Traffic Rules</h3>
+        <p>Understand important traffic rules and regulations.</p>
+      </a>
+      <a href="#complaint-form" class="feature-card">
+        <img src="icons/complaint.svg" alt="Complaint Form Icon" />
+        <h3>Complaint Form</h3>
+        <p>Report traffic violations and hazards.</p>
+      </a>
+      <a href="#accident-reports" class="feature-card">
+        <img src="icons/accident.svg" alt="Accident Reports Icon" />
+        <h3>Accident Reports</h3>
+        <p>View latest accident reports in your area.</p>
+      </a>
+    </div>
+  </section>
+
+  <script>
+    // Profile dropdown toggle
+    const profileIcon = document.getElementById('profileIcon');
+    const profileDropdown = document.getElementById('profileDropdown');
+
+    profileIcon.addEventListener('click', () => {
+      profileDropdown.style.display = profileDropdown.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (!profileIcon.contains(e.target) && !profileDropdown.contains(e.target)) {
+        profileDropdown.style.display = 'none';
+      }
+    });
+  </script>
+
+</body>
+</html>
